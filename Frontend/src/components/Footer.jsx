@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="bg-blue-600 text-white py-10">
+    <footer className="bg-primaryColor text-white py-10">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center md:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-left md:text-left">
           
           {/* Brand Name */}
           <div>
@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-semibold uppercase">Quick Links</h3>
-            <hr className="w-16 border-t-2 border-white mx-auto md:mx-0 my-3" />
+            <hr className="w-16 border-t-2 border-white md:mx-0 my-3" />
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-gray-300 transition-colors">Home</a></li>
               <li><a href="#" className="hover:text-gray-300 transition-colors">Doctors</a></li>
@@ -24,7 +24,7 @@ const Footer = () => {
           {/* Contact Us */}
           <div>
             <h3 className="text-lg font-semibold uppercase">Contact Us</h3>
-            <hr className="w-16 border-t-2 border-white mx-auto md:mx-0 my-3" />
+            <hr className="w-16 border-t-2 border-white  md:mx-0 my-3" />
             <ul className="space-y-2 text-sm">
               <li>📍 New Delhi</li>
               <li>📧 <a href="mailto:Carehub@gmail.com" className="hover:text-gray-300 transition-colors">Carehub@gmail.com</a></li>
@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Social Media */}
           <div>
             <h3 className="text-lg font-semibold uppercase">Social Media</h3>
-            <hr className="w-16 border-t-2 border-white mx-auto md:mx-0 my-3" />
+            <hr className="w-16 border-t-2 border-white  md:mx-0 my-3" />
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-gray-300 transition-colors">🐦 Twitter</a></li>
               <li><a href="#" className="hover:text-gray-300 transition-colors">📱 Whatsapp</a></li>

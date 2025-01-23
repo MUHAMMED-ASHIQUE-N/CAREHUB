@@ -1,21 +1,60 @@
-import React from 'react'
-import img from "../assets/assets_frontend/prescription.svg"
-const ServiceCard = () => {
+import React from "react";
+
+const ServiceCard = ({ image, title, description, moreInfo }) => {
   return (
-    
-    <div className="flex flex-col items-center justify-center gap-4 text-center bg-white p-6 rounded-2xl shadow-lg w-full max-w-sm sm:max-w-md lg:max-w-lg transition-transform duration-300 hover:scale-105">
-    {/* Image */}
-    <img src={img}  className="w-16 h-16 object-contain" />
+    <div className="card">
+      <div className="inner">
+        {/* Front Side */}
+        <div className="front">
+          <div className="content">
+            <img src={image} className="icon" alt="icon" />
+            <h1 className="title">{title}</h1>
+            <p className="description">{description}</p>
+          </div>
+        </div>
 
-    {/* Title */}
-    <h1 className="font-bold text-xl text-gray-800">General Treatment</h1>
+        {/* Back Side */}
+        <div className="back">
+          <div className="content">
+          <img src={image} className="icon" alt="icon" />
+          <h1 className="title">{title}</h1>
+               <p className="description">{description}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-    {/* Description */}
-    <p className="text-gray-600 text-sm sm:text-base px-2 sm:px-4">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.
-    </p>
-  </div>
-  )
-}
+export default ServiceCard;
 
-export default ServiceCard
+
+
+
+
+// import React from "react";
+
+// const ServiceCard = ({ image, title, description }) => {
+//   return (
+//     <div className="card">
+//       <div className="inner">
+//         {/* Front Side */}
+//         <div className="front">
+//           <img src={image} className="w-16 h-16 object-contain" />
+//           <h1 className="font-bold text-xl text-gray-800">{title}</h1>
+//           <p className="text-gray-600 text-sm sm:text-base px-2 sm:px-4">
+//             {description}
+//           </p>
+//         </div>
+
+//         {/* Back Side */}
+//         <div className="back">
+//           <h1 className="font-bold text-xl text-white">More Info</h1>
+//           <p className="text-white text-sm sm:text-base px-2 sm:px-4">
+//             Contact us for details!
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
