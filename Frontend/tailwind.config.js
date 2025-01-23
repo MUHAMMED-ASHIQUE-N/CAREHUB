@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        dmSans: ["DM Sans", "sans-serif"],
-        ptSerif: ["PT Serif", "serif"],
-        reemKufi: ["Reem Kufi", "sans-serif"],
+        sans: ["DM Sans", "sans-serif"],
+        serif: ["PT Serif", "serif"],
+        arimo: ["Arimo", "sans-serif"],
+        reem: ["Reem Kufi", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
         viga: ["Viga", "sans-serif"],
       },
       colors: {

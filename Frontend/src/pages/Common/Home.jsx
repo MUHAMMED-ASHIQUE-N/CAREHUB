@@ -1,90 +1,37 @@
-import appointment_img from './appointment_img.png'
-import header_img from './header_img.png'
-import group_profiles from './group_profiles.png'
-import profile_pic from './profile_pic.png'
-import contact_image from './contact_image.png'
-import about_image from './about_image.png'
-import dropdown_icon from './down.png'
-import menu_icon from './menu.png'
-import cross_icon from './close.png'
-import chats_icon from './chats_icon.svg'
-import verified_icon from './verified_icon.svg'
-import arrow_icon from './arrow_icon.svg'
-import info_icon from './info_icon.svg'
-import upload_icon from './upload_icon.png'
-import stripe_logo from './stripe_logo.png'
-import razorpay_logo from './razorpay_logo.png'
-import doc1 from './doc1.png'
-import doc2 from './doc2.png'
-import doc3 from './doc3.png'
-import doc4 from './doc4.png'
-import doc5 from './doc5.png'
-import doc6 from './doc6.png'
-import doc7 from './doc7.png'
-import doc8 from './doc8.png'
-import doc9 from './doc9.png'
-import doc10 from './doc10.png'
-import doc11 from './doc11.png'
-import doc12 from './doc12.png'
-import doc13 from './doc13.png'
-import doc14 from './doc14.png'
-import doc15 from './doc15.png'
-import Dermatologist from './Dermatologist.svg'
-import Gastroenterologist from './Gastroenterologist.svg'
-import General_physician from './General_physician.svg'
-import Gynecologist from './Gynecologist.svg'
-import Neurologist from './Neurologist.svg'
-import Pediatricians from './Pediatricians.svg'
-import banner1 from './banner-1.jpg'
+import React from "react";
+import Navbar from "../../components/Navbar";
+import SectionHeading from "../../components/SectionHeading";
+import Features from "../../components/Features";
+import Speciality from "../../components/Speciality";
+// assets 
 
-export const assets = {
-    appointment_img,
-    header_img,
-    group_profiles,
-    chats_icon,
-    verified_icon,
-    info_icon,
-    profile_pic,
-    arrow_icon,
-    contact_image,
-    about_image,
-    menu_icon,
-    cross_icon,
-    dropdown_icon,
-    upload_icon,
-    stripe_logo,
-    razorpay_logo,
-    banner1
-}
+import caduceus from "../../assets/assets_frontend/caduceus.png";
+import ambulance from "../../assets/assets_frontend/ambulance-cross.svg";
+import stethoscope from "../../assets/assets_frontend/stethoscope.svg";
+import Dermatologist  from "../../assets/assets_frontend/Dermatologist.svg"
+import Gynecologist  from "../../assets/assets_frontend/Gynecologist.svg"
+import General_physician  from "../../assets/assets_frontend/General_physician.svg"
+import Neurologist  from "../../assets/assets_frontend/Neurologist.svg"
+import DoctorCard from "../../components/DoctorCard";
+import doc1 from "../../assets/assets_frontend/doc1.png";
+import doc2 from "../../assets/assets_frontend/doc2.png";
+import doc3 from "../../assets/assets_frontend/doc3.png";
+import doc4 from "../../assets/assets_frontend/doc4.png";
+import doc5 from "../../assets/assets_frontend/doc5.png";
+import doc6 from "../../assets/assets_frontend/doc6.png";
+import doc7 from "../../assets/assets_frontend/doc7.png";
+import doc8 from "../../assets/assets_frontend/doc8.png";
+import doc9 from "../../assets/assets_frontend/doc9.png";
+import doc10 from "../../assets/assets_frontend/doc10.png";
+import doc11 from "../../assets/assets_frontend/doc11.png";
+import doc12 from "../../assets/assets_frontend/doc12.png";
+import doc13 from "../../assets/assets_frontend/doc13.png";
+import doc14 from "../../assets/assets_frontend/doc14.png";
+import doc15 from "../../assets/assets_frontend/doc15.png";
+import ServiceCard from "../../components/ServiceCard";
+import Footer from "../../components/Footer";
 
-export const specialityData = [
-    {
-        speciality: 'General physician',
-        image: General_physician
-    },
-    {
-        speciality: 'Gynecologist',
-        image: Gynecologist
-    },
-    {
-        speciality: 'Dermatologist',
-        image: Dermatologist
-    },
-    {
-        speciality: 'Pediatricians',
-        image: Pediatricians
-    },
-    {
-        speciality: 'Neurologist',
-        image: Neurologist
-    },
-    {
-        speciality: 'Gastroenterologist',
-        image: Gastroenterologist
-    },
-]
-
-export const doctors = [
+const doctors = [
     {
         _id: 'doc1',
         name: 'Dr. Richard James',
@@ -296,3 +243,153 @@ export const doctors = [
         }
     },
 ]
+
+// const specialityData = [
+//     { speciality: 'General physician',image: General_physician},
+//     {speciality: 'Gynecologist',image: Gynecologist},
+//     {speciality: 'Dermatologist',image: Dermatologist},
+//     {speciality: 'Pediatricians',image: Pediatricians},
+//     {speciality: 'Neurologist',image: Neurologist},
+//     { speciality: 'Gastroenterologist', image: Gastroenterologist },
+//       ]
+const Home = () => {
+  return (
+    <div className=" ">
+      <div className='relative bg-[url("./assets/assets_frontend/banner-1.jpg")] bg-cover  h-[70vh] xl:h-[90vh]'>
+      <div className="absolute inset-0">
+        <Navbar />
+      </div>
+        <div className='h-full flex items-center '>
+        
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute  text-white flex flex-col gap-3 justify-center   pl-5 md:px-10 lg:px-28">
+            <h1 className="text-2xl md:text-5xl font-bold tracking-[1px]  md:tracking-[1px]">
+              We Provide <span className="text-buttonColor">Medical</span>  Services <br /> That You Can <span className="text-buttonColor">Trust!</span> 
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam vero reiciendis illum minus dolores voluptate cumque.
+            </p>
+            <div className="mt-6 flex gap-4 flex-wrap ">
+            <button className="relative overflow-hidden bg-buttonColor text-white py-4 px-8 rounded-md font-roboto transition-all duration-500 
+  before:absolute before:inset-0 before:bg-[#213555] before:scale-x-0 before:origin-center 
+  hover:before:scale-x-100 before:transition-transform before:duration-500 
+   before:z-0 z-40">
+  <span className="relative z-10">Get Appointment</span>
+</button>
+<button className="relative overflow-hidden bg-[#213555] text-white py-4 px-8 rounded-md font-roboto transition-all duration-500 
+  before:absolute before:inset-0 before:bg-buttonColor before:scale-x-0 before:origin-center 
+  hover:before:scale-x-100 before:transition-transform before:duration-500 
+   before:z-0 z-30">
+  <span className="relative z-10">Contact Us</span>
+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+          {/* Banner */}
+      <div className="mx-auto lg:w-[85%]  py-10 ">
+        <SectionHeading heading={<>We Are Always Ready to Help You & <br/> Your Family</>}
+        paragrah={<>Lorem ipsum dolor sit amet consectetur adipiscing praesent aliquet. pretiumts</>} 
+        show={true}/>
+         <div className="flex flex-wrap lg:flex-row lg:flex-nowrap justify-center items-center mx-auto w-full gap-8 py-10">
+      {/* Feature Cards */}
+      <Features
+        image={ambulance}
+        heading="Emergency Help"
+        paragraph={
+          <>Emergency Help ensures immediate medical attention for critical situations, providing life-saving care and urgent treatment for patients in need.</>
+        }
+      />
+
+      {/* Divider (Visible on Medium+ screens) */}
+      <div className="text-5xl text-primaryColor hidden md:block animate-pulse">........</div>
+
+      <Features
+        image={caduceus}
+        heading="Enriched Pharmacy"
+        paragraph={
+          <>Enriched Pharmacy provides high-quality medications, expert guidance, and comprehensive pharmaceutical care to ensure better health and well-being.</>
+        }
+      />
+
+      <div className="text-5xl text-primaryColor hidden md:block animate-pulse">........</div>
+
+      <Features
+        image={stethoscope}
+        heading="Medical Treatment"
+        paragraph={
+          <>Medical Treatment offers expert care, advanced procedures, and personalized treatments to ensure the best health outcomes.</>
+        }
+      />
+    </div>
+      </div>
+      {/* // find by speciality  */}
+      <div className="py-10  bg-[#F4F4F4]">
+        <div className="mx-auto lg:w-[85%]  ">
+          <SectionHeading heading="Find by specialty "
+          paragrah={<>Easily browse through an extensive list of trusted doctors <br /> Book Your Appointments</>} />
+          <div className="flex items-center justify-center flex-wrap gap-4">
+          <Speciality  image={General_physician} speciality="General physician" />
+            <Speciality image={Dermatologist} speciality="Dermatologist" />
+           <Speciality  image={Neurologist} speciality="Neurologist" />
+            <Speciality  image={Dermatologist} speciality="Dermatologist" />
+                 <Speciality image={Gynecologist} speciality="Gynecologist" />
+          </div>
+        </div>
+      </div>
+      {/* //Doctoe cards */}
+      <div className="mx-auto lg:w-[85%] w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5  gap-4 py-10">
+        {  doctors.slice(0,10).map((val,index) => ( 
+    
+      <div  key={index}>
+        <DoctorCard  image={val.image} name={val.name} speciality={val.speciality} />
+      </div>
+       ))}
+       
+      </div>
+
+       {/* //service */}
+       <div className="py-10  bg-[#F4F4F4]">
+        <div className="mx-auto w-[85%]">
+        <SectionHeading heading={<>We Offer Different Services To <br />
+ Improve Your Health</> }
+        show={true}
+          paragrah={<>Lorem ipsum dolor sit amet consectetur adipiscing praesent aliquet. <br />
+pretiumts</>} />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-x-4 py-10">
+              <ServiceCard/>
+              <ServiceCard/>
+              <ServiceCard/>
+              <ServiceCard/>
+              <ServiceCard/>
+              <ServiceCard/>
+            </div>
+        </div>
+       </div>
+
+       {/* footer banner  */}
+
+       <div className="py-20" >
+        <div className="relative bg-[url('./assets/assets_frontend/handShake.jpg')] h-[30vh] xl:h-[50vh] bg-center bg-cover flex flex-col items-center gap-4 justify-center">
+        <div className="absolute inset-0 bg-[#1E61A4] opacity-75"></div>
+          <h1 className="text-[#213555] text-2xl md:text-4xl font-bold z-50">CareHub</h1>
+          <h1 className="text-2xl md:text-5xl font-bold font-sans text-white z-50"> Where Trust Meets Healthcare</h1>
+          <button className="relative overflow-hidden bg-buttonColor text-white py-4 px-8 rounded-md font-roboto transition-all duration-500 
+  before:absolute before:inset-0 before:bg-[#213555] before:scale-x-0 before:origin-center 
+  hover:before:scale-x-100 before:transition-transform before:duration-500 
+   before:z-0 z-10">
+  <span className="relative z-10">Get Appointment</span>
+</button>
+
+        </div>
+       </div>
+
+       <div>
+        <Footer/>
+       </div>
+    </div>
+  );
+};
+
+export default Home;
