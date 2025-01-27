@@ -1,7 +1,9 @@
 import React from 'react'
 import LoginPoster from './LoginPoster'
+import { useNavigate } from 'react-router-dom'
 
-function SignIn() {
+function Signup() {
+  const navigate = useNavigate("")
     return (
 
         <div className='flex justify-center items-center h-[90vh] mt-[4.5rem] mx-auto xl:w-[85%] '>
@@ -9,7 +11,6 @@ function SignIn() {
             
                 <LoginPoster />
                 
-             
             
               <div className="md:w-3/5 flex flex-col justify-center items-center border  border-gray-500  rounded-r-md md:rounded-l-0 md:rounded-r-md p-8 shadow-2xl">
                   <h2 className="text-2xl font-semibold mb-6">Create account</h2>
@@ -65,7 +66,7 @@ function SignIn() {
                 </button>
             </div>
             <p className="text-center mt-4 text-sm">
-              Don't have an account? <a href="#" className="text-[#0F70DA]">Login</a>
+              Don't have an account? <a onClick={()=>navigate("/login")} className="text-[#0F70DA] cursor-pointer">Login</a>
             </p>
                   </form>
               </div>
@@ -75,4 +76,4 @@ function SignIn() {
   )
 }
 
-export default SignIn
+export default Signup

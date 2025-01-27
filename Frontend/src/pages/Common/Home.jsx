@@ -42,6 +42,7 @@ import service_white_Img3 from  "../../assets/assets_frontend/heart-beat-alt_Whi
 import service_white_Img4 from  "../../assets/assets_frontend/eye-alt _White.svg"
 import service_white_Img5 from  "../../assets/assets_frontend/blood_White.svg"
 import service_white_Img6 from  "../../assets/assets_frontend/tooth_white.svg"
+import { Button } from "@material-tailwind/react";
 
 const serviceDetials = [
   {_id: "serv1",title:"General Treatment",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg1, image_white:service_white_Img1,},
@@ -107,6 +108,7 @@ const Home = () => {
               >
                 <span className="relative z-10">Get Appointment</span>
               </button>
+
               <button
                 className="relative overflow-hidden bg-[#213555] text-white py-4 px-8 rounded-md font-roboto transition-all duration-500 
   before:absolute before:inset-0 before:bg-buttonColor before:scale-x-0 before:origin-center 
@@ -246,6 +248,8 @@ const Home = () => {
                   title={data.title}
                   show={true}
                 />
+                     
+
               </div>
             ))}
           </div>

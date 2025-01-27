@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import Common from './Routes/Common'
+import Patient from './Routes/Patient'
 
 
 const App = () => {
   return (
  <BrowserRouter>
  
- <Common/>
+ <Patient/>
  
  </BrowserRouter>
   )

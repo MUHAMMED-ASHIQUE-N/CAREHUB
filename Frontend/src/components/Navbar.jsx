@@ -110,7 +110,8 @@ const Navbar = () => {
           {token ? (
             <button
             // setToken(false)
-              onClick={() => navigate("/login") }
+              onClick={() =>{navigate("/login"),setToken(false) }}
+              
               className=" md:flex items-center gap-1 py-2 bg-buttonColor px-5 rounded-full font-dmSans"
             >
               <span className="">Create</span> <span>Account </span>
@@ -127,10 +128,10 @@ const Navbar = () => {
               {dropDown ? (
                 <div className="absolute mx-auto top-12 right-0 bg-white w-40 rounded-lg shadow-lg font-dmSans  text-black ">
                   <div className="min-w-48 bg-stone-50 rounded flex flex-col gap-4 p-4 text-gray-600 font-medium">
-                    <p className="hover:text-black cursor-pointer">
+                    <p onClick={()=>navigate("/profilecard")} className="hover:text-black cursor-pointer">
                       My Profile
                     </p>
-                    <p className="hover:text-black cursor-pointer">
+                    <p onClick={()=>navigate("/my-appointments")} className="hover:text-black cursor-pointer">
                       My Appointments
                     </p>
                     <p

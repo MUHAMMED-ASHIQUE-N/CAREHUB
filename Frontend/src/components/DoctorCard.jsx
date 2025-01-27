@@ -8,12 +8,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const DoctorCard = ({name, speciality, image, delay  }) => {
+const DoctorCard = ({name, speciality, image  }) => {
 
 
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.2, 
+    threshold: 0.1, 
   });
 
   const navigate = useNavigate()

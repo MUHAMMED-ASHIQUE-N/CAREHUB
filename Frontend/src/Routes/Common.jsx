@@ -6,6 +6,7 @@ import ContactUs from '../pages/Common/ContactUs';
 import About from '../pages/Common/About';
 import Login from '../pages/Common/Login';
 import DoctorProfile from '../pages/Common/DoctorProfile';
+import SignUp from '../pages/Common/signUp';
 
 const Common = () => {
   return (
@@ -19,6 +20,7 @@ const Common = () => {
         <Route path="/about" element={<About/>} />
         <Route path="/doctor-profile" element={<DoctorProfile/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp/>} />
       </Routes>
    
     </div>
