@@ -1,13 +1,23 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
-const ServiceCard = ({ image, title, description, moreInfo }) => {
+
+const ServiceCard = ({ image, title, description, show, image_white}) => {
+
+  
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2, 
+  });
+
+
   return (
-    <div className="card">
+    <div ref={ref} className={`card   transform duration-1000 ease-out transition-all delay-300 ${inView ? "opacity-100 scale-x-100  "  : "opacity-0 scale-0 "} `}>
       <div className="inner">
         {/* Front Side */}
         <div className="front">
           <div className="content">
-            <img src={image} className="icon" alt="icon" />
+          {  show && <img src={image} className="icon" alt="icon" />}
             <h1 className="title">{title}</h1>
             <p className="description">{description}</p>
           </div>
@@ -16,7 +26,7 @@ const ServiceCard = ({ image, title, description, moreInfo }) => {
         {/* Back Side */}
         <div className="back">
           <div className="content">
-          <img src={image} className="icon" alt="icon" />
+          { show &&<img src={image_white} className="icon" alt="icon" />}
           <h1 className="title">{title}</h1>
                <p className="description">{description}</p>
           </div>

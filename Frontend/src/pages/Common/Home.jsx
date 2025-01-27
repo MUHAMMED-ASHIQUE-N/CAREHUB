@@ -36,14 +36,20 @@ import serviceImg3 from  "../../assets/assets_frontend/heart-beat-alt.svg"
 import serviceImg4 from  "../../assets/assets_frontend/eye-alt.svg"
 import serviceImg5 from  "../../assets/assets_frontend/blood.svg"
 import serviceImg6 from  "../../assets/assets_frontend/tooth.svg"
+import service_white_Img1 from  "../../assets/assets_frontend/prescription_White.svg"
+import service_white_Img2 from  "../../assets/assets_frontend/listening_White.svg"
+import service_white_Img3 from  "../../assets/assets_frontend/heart-beat-alt_White.svg"
+import service_white_Img4 from  "../../assets/assets_frontend/eye-alt _White.svg"
+import service_white_Img5 from  "../../assets/assets_frontend/blood_White.svg"
+import service_white_Img6 from  "../../assets/assets_frontend/tooth_white.svg"
 
 const serviceDetials = [
-  {_id: "serv1",title:"General Treatment",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg1,},
-  {_id: "serv2",title:"Ear Treatment",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg2,},
-  {_id: "serv3",title:"Heart Surgery",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg3,},
-  {_id: "serv4",title:"Vision Problems",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg4,},
-  {_id: "serv5",title:"Blood Transfusion",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg5,},
-  {_id: "serv6",title:"Teeth Whitening",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg6,},
+  {_id: "serv1",title:"General Treatment",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg1, image_white:service_white_Img1,},
+  {_id: "serv2",title:"Ear Treatment",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg2,image_white:service_white_Img2,},
+  {_id: "serv3",title:"Heart Surgery",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg3,image_white:service_white_Img3,},
+  {_id: "serv4",title:"Vision Problems",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg4,image_white:service_white_Img4,},
+  {_id: "serv5",title:"Blood Transfusion",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg5,image_white:service_white_Img5,},
+  {_id: "serv6",title:"Teeth Whitening",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg6,image_white:service_white_Img6,},
 ]
 
 const doctors = [
@@ -61,6 +67,9 @@ const doctors = [
   {_id: "doc14",name: "Dr. Ryan Martinez",image: doc14,speciality: "Gynecologist",degree: "MBBS",experience: "3 Years",about:"Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",fees: 60,address: {line1: "27th Cross, Richmond",line2: "Circle, Ring Road, London",},},
   {_id: "doc15",name: "Dr. Amelia Hill",image: doc15,speciality: "Dermatologist",degree: "MBBS",experience: "1 Years",about:"Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",fees: 30,address: {line1: "37th Cross, Richmond",line2: "Circle, Ring Road, London",},},
 ];
+
+
+
 
 // const specialityData = [
 //     { speciality: 'General physician',image: General_physician},
@@ -194,15 +203,16 @@ const Home = () => {
         </div>
       </div>
       {/* //Doctoe cards */}
-      <div className="mx-auto lg:w-[85%] w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5  gap-4 py-10">
+      <div className="mx-auto lg:w-[85%]  w-[80%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5  gap-4 py-10">
         {doctors.slice(0, 10).map((val, index) => (
           <div key={index}>
-            <DoctorCard
-              image={val.image}
-              name={val.name}
-              speciality={val.speciality}
-            />
-          </div>
+  <DoctorCard
+    image={val.image}
+    name={val.name}
+    speciality={val.speciality}
+  />
+</div>
+
         ))}
       </div>
 
@@ -231,8 +241,10 @@ const Home = () => {
               <div key={data._id}>
                 <ServiceCard
                   image={data.image}
+                  image_white={data.image_white}
                   description={data.description}
                   title={data.title}
+                  show={true}
                 />
               </div>
             ))}

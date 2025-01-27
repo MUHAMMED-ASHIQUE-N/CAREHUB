@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 // assets
 import cross_icon from "../assets/assets_frontend/close.png";
@@ -21,6 +21,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navigate = useNavigate()
 
   return (
     <nav
@@ -81,7 +83,7 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to={"/doctor"}
+              to={"/doctors"}
               className="text-white text-lg py-2"
               onClick={() => setMenuOpen(false)}
             >
@@ -107,7 +109,8 @@ const Navbar = () => {
         <div className="flex items-center space-x-7">
           {token ? (
             <button
-              onClick={() => setToken(false)}
+            // setToken(false)
+              onClick={() => navigate("/login") }
               className=" md:flex items-center gap-1 py-2 bg-buttonColor px-5 rounded-full font-dmSans"
             >
               <span className="">Create</span> <span>Account </span>

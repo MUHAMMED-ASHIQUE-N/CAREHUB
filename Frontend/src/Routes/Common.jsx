@@ -5,6 +5,7 @@ import Doctors from '../pages/Common/Doctors';
 import ContactUs from '../pages/Common/ContactUs';
 import About from '../pages/Common/About';
 import Login from '../pages/Common/Login';
+import DoctorProfile from '../pages/Common/DoctorProfile';
 
 const Common = () => {
   return (
@@ -16,6 +17,7 @@ const Common = () => {
         <Route path="/doctors" element={<Doctors/>} />
         <Route path="/contact-Us" element={<ContactUs/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/doctor-profile" element={<DoctorProfile/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>
    
