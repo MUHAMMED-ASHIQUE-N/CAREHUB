@@ -7,7 +7,7 @@ const ContactUs = () => {
     <div>
 
       <div className='py-[2.5rem]'>
-        <Navbar/>
+      <Navbar/>
       </div>
 
       <div className='text-center text-2xl text-gray-500 pt-20'>
