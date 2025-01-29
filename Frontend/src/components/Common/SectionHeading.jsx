@@ -1,7 +1,7 @@
 import React from 'react'
 
 //assets 
-import dividingImg from "../assets/assets_frontend/section-img.png"
+import dividingImg from "../../assets/assets_frontend/section-img.png"
 const SectionHeading = (props) => {
   return (
     <div className='flex flex-col items-center text-center gap-4'>

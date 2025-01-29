@@ -1,9 +1,10 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Dashboard from '../pages/Admin/Dashboard'
+
 import Appointments from '../pages/Admin/Appointments'
 import AddDoctors from '../pages/Admin/AddDoctors'
 import DoctorsList from '../pages/Admin/DoctorsList'
+import Dashboard from '../pages/Admin/Dashboard'
 
 const Admin = () => {
   return (

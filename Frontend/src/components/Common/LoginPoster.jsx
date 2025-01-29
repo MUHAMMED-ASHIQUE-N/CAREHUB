@@ -1,5 +1,5 @@
 import React from "react";
-import login_Image from "../assets/assets_frontend/login_page_image.png";
+import login_Image from "../../assets/assets_frontend/login_page_image.png";
 
 function LoginPoster() {
     return (

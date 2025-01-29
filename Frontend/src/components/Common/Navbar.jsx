@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 // assets
-import cross_icon from "../assets/assets_frontend/close.png";
-import menu_icon from "../assets/assets_frontend/menu.png";
-import profile_pic from "../assets/assets_frontend/profile_pic.png";
-import dropdown_icon from "../assets/assets_frontend/down.png";
+import cross_icon from "../../assets/assets_frontend/close.png";
+import menu_icon from "../../assets/assets_frontend/menu.png";
+import profile_pic from "../../assets/assets_frontend/profile_pic.png";
+import dropdown_icon from "../../assets/assets_frontend/down.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

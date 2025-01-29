@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
-import SignIn from "../../components/SingIn";
+import Navbar from "../../components/Common/Navbar";
+import SignIn from "../../components/Common/SingIn";
+
 
 const Login = () => {
   return (

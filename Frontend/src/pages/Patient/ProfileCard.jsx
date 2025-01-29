@@ -1,6 +1,7 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
-import Sidebar from "../../components/Sidebar";
+import Navbar from "../../components/Common/Navbar";
+import Sidebar from "../../components/Admin,Doctor,Pharmacy/Sidebar";
+
 
 const ProfileCard = () => {
   return (

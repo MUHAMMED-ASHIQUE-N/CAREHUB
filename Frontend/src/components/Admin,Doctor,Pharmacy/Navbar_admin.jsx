@@ -2,12 +2,12 @@ import React from 'react'
 
 const Navbar_admin = () => {
   return (
-    <div className='bg-white border-b w-full py-4'>
+    <div className='bg-white border-b w-full py-2 md:py-4'>
       <div className='flex justify-between  ' >
         <div className='flex gap-1 md:gap-4'>
             <div className='flex flex-col pl-5 md:pl-20'>
-                <h1 className='text-3xl font-viga text-primaryColor'>Carehub</h1>
-                <p className='text-xs text-gray-700y'>Dashboard panel</p>
+                <h1 className='text-2xl md:text-3xl font-viga text-primaryColor'>Carehub</h1>
+                <p className='text-[8px] md:text-xs text-gray-700y'>Dashboard panel</p>
             </div>
          <button className='border h-8 px-3 md:px-5 rounded-full text-xs md:text-sm '> Admin </button>
 

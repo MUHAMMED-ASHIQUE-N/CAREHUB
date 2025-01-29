@@ -1,8 +1,8 @@
 import React from "react";
 import doc1 from "../../assets/assets_frontend/doc1.png";
 import verified_icon from "../../assets/assets_frontend/verified_icon.svg";
-import Navbar from "../../components/Navbar";
 import { useState } from "react";
+import Navbar from "../../components/Common/Navbar";
 
 const DoctorProfile = () => {
   const [selectedDate, setSelectedDate] = useState("10");

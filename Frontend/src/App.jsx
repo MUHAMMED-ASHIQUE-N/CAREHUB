@@ -9,10 +9,12 @@ const App = () => {
   return (
  <BrowserRouter>
  
- <Admin/>
+
+ <Patient/>
+
  
  </BrowserRouter>
   )
 }
 
-export default App
+export default App;

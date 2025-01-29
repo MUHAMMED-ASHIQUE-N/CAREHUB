@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/Navbar'
-import DoctorCard from '../../components/DoctorCard'
+
 //assets
 import search_icon from '../../assets/assets_frontend/search_icon.svg'
 import down1 from '../../assets/assets_frontend/dropdown_icon.svg'
@@ -19,15 +18,15 @@ import doc12 from "../../assets/assets_frontend/doc12.png";
 import doc13 from "../../assets/assets_frontend/doc13.png";
 import doc14 from "../../assets/assets_frontend/doc14.png";
 import doc15 from "../../assets/assets_frontend/doc15.png";
-import Banner from '../../components/Banner'
-import Footer from '../../components/Footer'
+import Navbar from '../../components/Common/Navbar';
+import DoctorCard from '../../components/Common/DoctorCard';
+import Banner from '../../components/Common/Banner';
+import Footer from '../../components/Common/Footer';
+
 
 
 
 const Doctors = () => {
-
-
-
 
   const doctors = [
     {_id: "doc1",name: "Dr. Richard James",image: doc1,speciality: "General physician",degree: "MBBS",experience: "4 Years",about:"Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",fees: 50,address: {line1: "17th Cross, Richmond",line2: "Circle, Ring Road, London",},},

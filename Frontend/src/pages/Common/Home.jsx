@@ -1,10 +1,4 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
-import SectionHeading from "../../components/SectionHeading";
-import Features from "../../components/Features";
-import Speciality from "../../components/Speciality";
-import ServiceCard from "../../components/ServiceCard";
-import Footer from "../../components/Footer";
 // assets
 
 import caduceus from "../../assets/assets_frontend/caduceus.png";
@@ -14,7 +8,6 @@ import Dermatologist from "../../assets/assets_frontend/Dermatologist.svg";
 import Gynecologist from "../../assets/assets_frontend/Gynecologist.svg";
 import General_physician from "../../assets/assets_frontend/General_physician.svg";
 import Neurologist from "../../assets/assets_frontend/Neurologist.svg";
-import DoctorCard from "../../components/DoctorCard";
 import doc1 from "../../assets/assets_frontend/doc1.png";
 import doc2 from "../../assets/assets_frontend/doc2.png";
 import doc3 from "../../assets/assets_frontend/doc3.png";
@@ -42,7 +35,14 @@ import service_white_Img3 from  "../../assets/assets_frontend/heart-beat-alt_Whi
 import service_white_Img4 from  "../../assets/assets_frontend/eye-alt _White.svg"
 import service_white_Img5 from  "../../assets/assets_frontend/blood_White.svg"
 import service_white_Img6 from  "../../assets/assets_frontend/tooth_white.svg"
-import { Button } from "@material-tailwind/react";
+import Navbar from "../../components/Common/Navbar";
+import SectionHeading from "../../components/Common/SectionHeading";
+import Features from "../../components/Common/Features";
+import Speciality from "../../components/Common/Speciality";
+import ServiceCard from "../../components/Common/ServiceCard";
+import Footer from "../../components/Common/Footer";
+import DoctorCard from "../../components/Common/DoctorCard";
+
 
 const serviceDetials = [
   {_id: "serv1",title:"General Treatment",description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.",image:serviceImg1, image_white:service_white_Img1,},

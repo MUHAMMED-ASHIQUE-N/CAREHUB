@@ -1,6 +1,6 @@
 import React from 'react'
 
-import appointment_img from '../assets/assets_frontend/appointment_img.png'
+import appointment_img from '../../assets/assets_frontend/appointment_img.png'
 const Banner = () => {
   return (
     <div className='flex bg-primaryColor  md:rounded-lg px-6 sm:px-10 md:px-14 lg:px-12 my-20 md:mx-10'>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Navbar from '../../components/Navbar'
 
 import aboutImg from '../../assets/assets_frontend/about_image.png'
-import ServiceCard from '../../components/ServiceCard'
-import Footer from '../../components/Footer'
+import Navbar from '../../components/Common/Navbar'
+import Footer from '../../components/Common/Footer'
+import ServiceCard from '../../components/Common/ServiceCard'
 const About = () => {
   return (
     <div>
