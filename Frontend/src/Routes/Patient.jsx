@@ -16,7 +16,7 @@ const Patient = () => {
   return (
     <div>
         <Routes>
-        <Route path="/" element={<ChatApp/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/doctors" element={<Doctors/>} />
         <Route path="/contact-Us" element={<ContactUs/>} />
         <Route path="/about" element={<About/>} />
@@ -25,6 +25,7 @@ const Patient = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/profilecard" element={<ProfileCard/>} />
         <Route path="/my-appointments" element={<MyAppointments />} />
+        <Route path="/Chat" element={<ChatApp/>} />
       </Routes>
    
     </div>
