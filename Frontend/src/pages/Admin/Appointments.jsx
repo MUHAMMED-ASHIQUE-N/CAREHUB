@@ -73,7 +73,7 @@ const Appointments = () => {
 
   return (
     <div className="flex flex-col  h-[50vh]">
-    <Navbar_admin /> {/* Navbar on top */}
+    <Navbar_admin department={"Admin"}/> {/* Navbar on top */}
     <div className="flex flex-1">
       <div className="flex-shrink-0">
         <Sidebar /> {/* Sidebar on the left */}

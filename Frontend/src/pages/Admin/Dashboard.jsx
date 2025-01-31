@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <Navbar_admin />
+      <Navbar_admin department={"Admin"} />
       <div className="flex flex-1">
         <div className="flex-shrink-0">
           <Sidebar />

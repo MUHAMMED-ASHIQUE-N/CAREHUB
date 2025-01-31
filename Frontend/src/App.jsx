@@ -11,7 +11,8 @@ const App = () => {
  <BrowserRouter>
  
 
- <Patient />
+
+ <Admin />
 
  
  </BrowserRouter>

@@ -9,7 +9,7 @@ import Login from '../pages/Common/Login'
 import ProfileCard from '../pages/Patient/ProfileCard'
 import MyAppointments from '../pages/Patient/MyAppointments'
 import SignUp from '../pages/Common/signUp'
-import ChatApp from '../pages/Patient/ChatApp'
+import ChatApp from '../components/Common/ChatApp'
 
 
 const Patient = () => {

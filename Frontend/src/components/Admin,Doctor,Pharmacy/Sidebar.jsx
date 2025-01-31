@@ -51,6 +51,11 @@ const Sidebar = () => {
       icon: people_icon,
       label: "Doctors List",
     },
+    {
+      path: PATHS.DOCTORS_LIST,
+      icon: people_icon,
+      label: "Messages",
+    },
   ];
 
   return (
