@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Send, Search, Smile, ArrowLeft } from "lucide-react";
 
-// Sidebar Component
-const Sidebar = ({ users, search, setSearch, onUserClick, sidebarVisible, setShowChat }) => (
+const SidebarOfChatApp = ({ users, search, setSearch, onUserClick, sidebarVisible, setShowChat }) => (
   <div className={`w-full md:w-1/4 bg-white rounded-l-md border-r p-4 flex flex-col ${sidebarVisible ? '' : 'md:hidden'}`}>
     <div className="relative mb-4">
       <input
@@ -32,7 +31,6 @@ const Sidebar = ({ users, search, setSearch, onUserClick, sidebarVisible, setSho
   </div>
 );
 
-// ChatHeader Component
 const ChatHeader = ({ currentUser, onBackClick }) => (
   <div className="bg-[#0077b6] text-white text-lg font-bold p-4 flex items-center space-x-3">
     <button onClick={onBackClick} className="text-white md:hidden">
@@ -43,7 +41,6 @@ const ChatHeader = ({ currentUser, onBackClick }) => (
   </div>
 );
 
-// MessageList Component
 const MessageList = ({ messages }) => {
   const messageEndRef = useRef(null);
 
@@ -66,7 +63,6 @@ const MessageList = ({ messages }) => {
   );
 };
 
-// MessageInput Component
 const MessageInput = ({ input, setInput, sendMessage }) => (
   <div className="flex items-center p-4 border-t bg-white fixed bottom-0 w-full md:w-[75%]">
     <Smile size={24} className="text-gray-500 mr-2 cursor-pointer" />
@@ -84,7 +80,7 @@ const MessageInput = ({ input, setInput, sendMessage }) => (
   </div>
 );
 
-// Main ChatApp Component
+
 export default function ChatApp() {
   const [messages, setMessages] = useState([{ text: "Hello! How can I help you?", sender: "Bot" }]);
   const [input, setInput] = useState("");
@@ -127,9 +123,9 @@ export default function ChatApp() {
   return (
     <div className="flex flex-col h-screen bg-[#f7f7f7]">
       <div className="flex flex-1">
-        {/* Sidebar */}
+
         {(!isMobile || sidebarVisible) && (
-          <Sidebar users={users} search={search} setSearch={setSearch} onUserClick={onUserClick} setShowChat={setShowChat} sidebarVisible={sidebarVisible} />
+          <SidebarOfChatApp users={users} search={search} setSearch={setSearch} onUserClick={onUserClick} setShowChat={setShowChat} sidebarVisible={sidebarVisible} />
         )}
 
         {/* Chat Area */}

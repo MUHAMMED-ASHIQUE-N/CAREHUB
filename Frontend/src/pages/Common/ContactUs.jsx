@@ -2,8 +2,11 @@ import React from 'react'
 import Contact_image from '../../assets/assets_frontend/contact_image.png'
 import Navbar from '../../components/Common/Navbar'
 import Footer from '../../components/Common/Footer'
+import { useNavigate } from 'react-router-dom'
 
 const ContactUs = () => {
+
+  const navigate = useNavigate()
   return (
     <div>
 
@@ -31,7 +34,7 @@ const ContactUs = () => {
   hover:before:scale-x-100 before:transition-transform before:duration-500 
    before:z-0 z-40"
               >
-                <span className="relative z-10">Get Appointment</span>
+                <span  onClick={() => navigate("/doctors")} className="relative z-10">Get Appointment</span>
               </button>
         </div>
       </div>

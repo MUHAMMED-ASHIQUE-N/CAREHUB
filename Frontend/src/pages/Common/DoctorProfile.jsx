@@ -1,12 +1,23 @@
 import React, { useState } from "react";
-import doc1 from "../../assets/assets_frontend/doc1.png";
 import verified_icon from "../../assets/assets_frontend/verified_icon.svg";
 import Navbar from "../../components/Common/Navbar";
 import Footer from "../../components/Common/Footer";
+import { useParams } from "react-router-dom";
+import {DoctorsData} from '../../Constants/DoctorsData'
 
 const DoctorProfile = () => {
   const [selectedDate, setSelectedDate] = useState("10");
   const [selectedTime, setSelectedTime] = useState("9:00 am");
+
+
+  const {id} = useParams();
+  const doctor = DoctorsData.find(doc => doc._id === id);
+
+
+  if (!doctor) {
+    return <div>Doctor not found</div>;
+  }
+
 
   const dates = [
     { day: "MON", date: "10" },
@@ -29,23 +40,6 @@ const DoctorProfile = () => {
     "11:30am",
   ];
 
-  const doctors = [
-    {
-      _id: "doc1",
-      name: "Dr. Richard James",
-      image: doc1,
-      speciality: "General physician",
-      degree: "MBBS",
-      experience: "4 Years",
-      about:
-        "Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies. Dr. Davis has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
-      fees: 50,
-      address: {
-        line1: "17th Cross, Richmond",
-        line2: "Circle, Ring Road, London",
-      },
-    },
-  ];
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
@@ -62,37 +56,37 @@ const DoctorProfile = () => {
         <div className="flex flex-col md:flex-row gap-4 py-10">
           <div>
             <img
-              src={doctors[0].image}
+              src={doctor.image}
               alt="Doctor"
               className="bg-buttonColor w-full max-w-72 rounded-lg"
             />
           </div>
           <div className="flex-1 border border-gray-400 p-8 xl:pr-40 py-7 bg-white rounded-lg mx-2 md:mx-0 mt-[-80px] md:mt-[0]">
             <h1 className="flex items-center gap-2 text-2xl font-medium text-gray-900">
-              {doctors[0].name}{" "}
+              {doctor.name}{" "}
               <img src={verified_icon} alt="Verified" className="w-5" />
             </h1>
 
             <div className="flex items-center gap-2 text-base mt-1 text-gray-600">
               <p>
-                <span>{doctors[0].degree}</span> -{" "}
-                <span>{doctors[0].speciality}</span>
+                <span>{doctor.degree}</span> -{" "}
+                <span>{doctor.speciality}</span>
               </p>{" "}
               <button className="py-0.5 px-2 text-xs border rounded-full">
-                {doctors[0].experience}{" "}
+                {doctor.experience}{" "}
               </button>{" "}
             </div>
 
             <div>
               <h2 className="text-gray-900 font-medium mt-3">About</h2>
               <p className="text-sm text-gray-500 max-w-[700px] mt-1">
-                {doctors[0].about}
+                {doctor.about}
               </p>
             </div>
             <p className="text-gray-700 font-medium mt-3">
               Appointment fee:{" "}
               <span className="text-black font-semibold">
-                ${doctors[0].fees}
+                ${doctor.fees}
               </span>
             </p>
           </div>
