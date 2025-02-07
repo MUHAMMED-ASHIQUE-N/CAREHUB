@@ -17,7 +17,7 @@ const DoctorProfile = () => {
         djk
         {/* Add more content to make the sidebar height adjust */}
       </div>
-    </div>
+    </div>        
   </div>
   )
 }

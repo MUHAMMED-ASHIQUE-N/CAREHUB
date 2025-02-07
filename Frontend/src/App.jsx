@@ -13,9 +13,10 @@ const App = () => {
  
 
 
- {/* <Common />
- <Patient/> */}
+  <Common />
+ <Patient/> 
 <Doctor/>
+<Admin/>
  
  </BrowserRouter>
   )
