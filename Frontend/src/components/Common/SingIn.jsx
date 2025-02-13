@@ -5,13 +5,30 @@ import { useForm } from 'react-hook-form'
 
 const SingIn = () => {
 
-    const navigate = useNavigate("")
-  const [loginDetails, setLoginDetails] = useState([]);
+    const navigate = useNavigate()
+
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => setLoginDetails(data);
-  console.log(loginDetails);
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:7070/api/login",data,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
 
+      if (response.data.status === "ok") {
+        alert("Login successful!");
+        navigate("/"); // Redirect after successful login
+      } else {
+        alert(response.data.message || "Login failed! Check your credentials.");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
   return (
     <div>
        <div className='flex justify-center items-center h-[90vh] mt-[4.5rem] mx-auto xl:w-[85%] '>
