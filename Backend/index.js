@@ -4,7 +4,7 @@ const cors = require("cors");
 const connectDB = require("./db.js");
 const User = require("./Models/user.js");
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken')
+const jwt = require("jsonwebtoken");
 connectDB();
 
 //midlewares
@@ -13,17 +13,23 @@ app.use(cors());
 
 app.post("/api/user/Register", async (req, res) => {
   try {
-    console.log(req.body);
+    const { firstName, secondName, email, phoneNumber, password, RememberMe } =
+      req.body;
 
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "email already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
-      firstName: req.body.firstName,
-      secondName: req.body.secondName,
-      email: req.body.email,
-      phoneNumber: req.body.phoneNumber,
+      firstName,
+      secondName,
+      email,
+      phoneNumber,
       password: hashedPassword,
-      rememberMe: req.body.RememberMe,
+      RememberMe,
     });
 
     res.status(201).json({ message: "User registered successfully" });
@@ -33,47 +39,27 @@ app.post("/api/user/Register", async (req, res) => {
   }
 });
 
-app.post("api/login", async (req, res) => {
+app.post(`/api/login`, async (req, res) => {
   try {
+    const { email, password } = req.body;
 
-    const user = User.find({
-        email : req.body.email
+    const user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ message: "invalid email or password" });
+
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+    if (!isPasswordMatch)return res.status(400).json({ message: "invalid email or password " });
+
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
     });
 
-    if (user) {
-      const isPasswordValid = await bcrypt.compare(
-        req.body.password,
-        user.password
-      );
-
-      if (isPasswordValid) {
-        const token = jwt.sign(
-          {
-            email: user.email,
-            password: user.password,
-          },
-          "sectret55"
-        );
-        return res.json({ status: "ok", user: token });
-      } else {
-        return res.json({
-          status: "error",
-          user: false,
-          error: "Invalid password",
-        });
-      }
-    } else {
-      return res.json({
-        status: "error",
-        user: false,
-        error: "User not found",
-      });
-    }
+      res.status(200).json({ message: "Login successful", token });
 
   } catch (err) {
-        res.json({ status: "error", error: "Something went wrong" });
     console.error(err);
-  }
+
+    res.status(400).json({ message: "invalid email or password" });
+  } 
 });
 
 const PORT = process.env.PORT || 7070;

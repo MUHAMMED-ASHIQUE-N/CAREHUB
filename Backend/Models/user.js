@@ -7,9 +7,10 @@ const UserSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     phoneNumber: { type: Number, required: true },
     password: { type: String, required: true },
-    rememberMe: { type: String, required: true },
+    RememberMe: { type: String, required: true },
   },
-  { collation: "Users" }
+  { collation: { locale: 'en', strength: 2 } },
+
 );
 
 module.exports = mongoose.model("User", UserSchema);

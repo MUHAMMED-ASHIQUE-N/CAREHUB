@@ -1,34 +1,25 @@
 import React, { useState } from 'react'
 import LoginPoster from './LoginPoster'
-import { useNavigate } from 'react-router-dom'
+import { data, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import axios from "axios";
 
 const SingIn = () => {
 
     const navigate = useNavigate()
+    const [error, setError] = useState("");
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:7070/api/login",data,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-
-      if (response.data.status === "ok") {
-        alert("Login successful!");
-        navigate("/"); // Redirect after successful login
-      } else {
-        alert(response.data.message || "Login failed! Check your credentials.");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      alert("Something went wrong. Please try again.");
+    try{
+await axios.post("http://localhost:7070/api/login", data);
+navigate('/')
+    }catch (err){
+      console.error(err);
+      setError(err.response?.dat?.message || "login failed")
     }
-  };
+  }
   return (
     <div>
        <div className='flex justify-center items-center h-[90vh] mt-[4.5rem] mx-auto xl:w-[85%] '>
@@ -38,17 +29,22 @@ const SingIn = () => {
             
               <div className="md:w-3/5 flex flex-col justify-center items-center border  border-gray-500  rounded-r-md md:rounded-l-0 md:rounded-r-md p-8 shadow-2xl">
                   <h2 className="text-2xl font-semibold mb-6">Login Account</h2>
-            
+                  {error && <p style={{ color: "red" }}>{error}</p>}
                   <form onSubmit={handleSubmit(onSubmit)} className=" w-full md:max-w-[400px] ">
             <div>
                 <div className="grid grid-cols-1  gap-4">
                     <div>
                         <label htmlFor="" className='text-gray-700 text-sm'> Email /  Phone No</label>
-                      <input type="text"  {...register("logintype", { required: true })} className="border py-2 pl-2 pr-2 rounded-md w-full" />
+                      <input type="email"  {...register("email", { required: "Email is required" })} className="border py-2 pl-2 pr-2 rounded-md w-full" />
+                      {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
+                      
                     </div>
                     <div>
                         <label htmlFor="" className='text-gray-700 text-sm'>Password</label>
-                      <input type="text"  {...register("phoneNumber", { required: true })} className="border py-2  pl-2 pr-2 rounded-md w-full" />
+                      <input type="password"  {...register("password", { required:  "Password is required" })} className="border py-2  pl-2 pr-2 rounded-md w-full" />
+                      {errors.password && (
+          <p style={{ color: "red" }}>{errors.password.message}</p>
+        )}
                     </div>
                 </div>
               
