@@ -13,7 +13,7 @@ const SingIn = () => {
 
   const onSubmit = async (data) => {
     try{
-await axios.post("http://localhost:7070/api/login", data);
+await axios.post("http://localhost:7070/api/user/login", data);
 navigate('/')
     }catch (err){
       console.error(err);
